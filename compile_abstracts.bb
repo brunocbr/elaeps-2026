@@ -94,7 +94,7 @@
                              (filter #(= id (:session-id %)))
                              (sort-by :session-order))]
     (str/join "\n\n"
-              (cons (format "# Session %s" id),
+              (cons (format "# Session %s (%s %s)" id date time),
                     (for [e session-entries]
                       (:contents e))))))
 
