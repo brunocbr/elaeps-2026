@@ -82,13 +82,13 @@
                       "&prompt=consent"
                       "&redirect_uri=" redirect-uri
                       "&client_id=" client-id)]
-    
+
     (println "\nTarget folder requires new authorization.")
     (println "Opening browser...")
-    
+
     ;; Opens browser (macOS 'open'). Use 'xdg-open' on Linux if needed.
     (sh "open" auth-url) 
-    
+
     (let [code @promise-code
           resp (http/post "https://oauth2.googleapis.com/token"
                           {:form-params {:code code
@@ -98,7 +98,7 @@
                                          :grant_type "authorization_code"}})]
       (save-token (:body resp))
       (println "✅ New token.json generated."))
-    
+
     (stop-server)))
 
 ;; --- Main Execution ---
