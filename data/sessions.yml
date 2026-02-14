@@ -1,87 +1,57 @@
 ---
 sessions:
   - id: 1
-    date: Sep. 29^th^
-    time: 09h15
+    date: 9 Mar
+    time: 14h00
   - id: 2
-    date: Sep. 29^th^
-    time: 10h10
+    date: 9 Mar
+    time: 15h45
   - id: 3
-    date: Sep. 29^th^
-    time: 11h25
-  - id: 4
-    date: Sep. 29^th^
-    time: 12h10
-  - id: 5
-    date: Sep. 29^th^
-    time: 14h25
-  - id: 6
-    date: Sep. 29^th^
-    time: 15h20
-  - id: 7
-    date: Sep. 29^th^
-    time: 16h35
-  - id: 8
-    date: Sep. 29^th^
-    time: 17h20
-  - id: 9
-    date: Sep. 30^th^
-    time: 09h15
-  - id: 10
-    date: Sep. 30^th^
-    time: 10h10
-  - id: 11
-    date: Sep. 30^th^
-    time: 11h25
-  - id: 12
-    date: Sep. 30^th^
-    time: 12h10
-  - id: 13
-    date: Sep. 30^th^
-    time: 14h25
-  - id: 14
-    date: Sep. 30^th^
-    time: 15h20
-  - id: 15
-    date: Sep. 30^th^
-    time: 16h35
-  - id: 16
-    date: Sep. 30^th^
-    time: 17h20
-  - id: 17
-    date: Oct. 1^st^
+    date: 10 Mar
     time: 09h00
+  - id: 4
+    date: 10 Mar
+    time: 10h45
+  - id: 5
+    date: 10 Mar
+    time: 14h15
+  - id: 6
+    date: 10 Mar
+    time: 16h30
+  - id: 7
+    date: 11 Mar
+    time: 09h00
+  - id: 8
+    date: 11 Mar
+    time: 10h45
+  - id: 9
+    date: 11 Mar
+    time: 14h00
+  - id: 10
+    date: 11 Mar
+    time: 16h15
+  - id: 11
+    date: 12 Mar
+    time: 09h00
+  - id: 12
+    date: 12 Mar
+    time: 10h45
+  - id: 13
+    date: 12 Mar
+    time: 14h00
+  - id: 14
+    date: 12 Mar
+    time: 16h15
+  - id: 15
+    date: 13 Mar
+    time: 09h00
+  - id: 16
+    date: 13 Mar
+    time: 10h45
+  - id: 17
+    date: 13 Mar
+    time: 14h00
   - id: 18
-    date: Oct. 1^st^
-    time: 09h45
-  - id: 19
-    date: Oct. 1^st^
-    time: 11h00
-  - id: 20
-    date: Oct. 1^st^
-    time: 11h55
-  - id: 21
-    date: Oct. 2^nd^
-    time: 09h15
-  - id: 22
-    date: Oct. 2^nd^
-    time: 10h10
-  - id: 23
-    date: Oct. 2^nd^
-    time: 11h25
-  - id: 24
-    date: Oct. 2^nd^
-    time: 12h10
-  - id: 25
-    date: Oct. 2^nd^
-    time: 14h25
-  - id: 26
-    date: Oct. 2^nd^
-    time: 15h20
-  - id: 27
-    date: Oct. 2^nd^
-    time: 16h35
-  - id: 28
-    date: Oct. 2^nd^
-    time: 17h20
+    date: 13 Mar
+    time: 16h15
 ---

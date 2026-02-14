@@ -8,8 +8,8 @@
 \usepackage[a4paper,margin=3cm,innermargin=3cm]{geometry}
 
 \usepackage{fontspec}
-\setmainfont{Minion Pro}
-\setsansfont{Myriad Pro}
+\setmainfont{EB Garamond}
+\setsansfont{Belleza}
 \usepackage{ifthen}
 
 \usepackage{needspace}
@@ -36,12 +36,14 @@
 \makeindex[intoc]
 
 \usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguages{french,greek}
+\setmainlanguage[variant=brazil]{portuguese}
+\setotherlanguages{english,spanish,greek}
 \setkeys{greek}{variant=ancient}
 \setotherlanguage[variant=ancient]{greek}
 
 \hypersetup{hidelinks}
+
+\newcommand{\textsclowercase}[1]{\textsc{\MakeLowercase{#1}}}
 
 % Image credits
 % Paper icons created by Chanut - Flaticon
@@ -86,9 +88,9 @@
   \begin{center}
     { \renewcommand\textsuperscript[1]{}
       \phantomsection\addcontentsline{toc}{section}
-                                     {\texorpdfstring{\textsc{keynote:} #2 (\emph{#3})}{#2 (#3)}}
+                                     {\texorpdfstring{\textsc{minicurso:} #2 (\emph{#3})}{#2 (#3)}}
     }
-    {\bfseries\scshape\so{keynote}\par\medskip}
+    {\bfseries\scshape\so{minicurso}\par\medskip}
     {{\large\bfseries \href{#6}{#2}}\marginnote{#1\par%
         \vspace{0.5em}\printDocumentIcon{#7}{#6}}\par}
     \medskip
@@ -129,35 +131,33 @@
 \usepackage{xcolor}
 \usepackage{afterpage}
 
-\definecolor{darkslategray}{RGB}{15,45,72}
+\definecolor{coverbackground}{RGB}{121,143,190}
 
 \addto\captionsenglish{% Replace "english" with the language you use
   \renewcommand{\contentsname}%
     {Summary}%
 }
 
-\hyphenation{
-  Reh-bin-der
-  Leonardo
-  Ephesus
-  Nazyheli
-  Henrique
-  André
-  Cummings
-  Alexandre
-  Fernandes
-  Victoria
-}
 
 \begin{document}
+
+\hyphenation{%
+  Enrique
+  Alejandro
+  Montenegro
+  Pereira
+  Martim
+  Naka-yama
+  Busquet
+}
 
 \frontmatter
 
 \begin{titlepage}
   \newgeometry{left=0.1in,right=0.1in,top=0.1in,bottom=0.1in}
-  \pagecolor{darkslategray}\afterpage{\nopagecolor}
+  \pagecolor{coverbackground}\afterpage{\nopagecolor}
   \centering
-  \includegraphics[width=\textwidth]{../images/parmenides_capa.jpg}
+  \includegraphics[width=\textwidth]{../images/Capa_Azul.png}
 \end{titlepage}
 
 \restoregeometry
@@ -166,13 +166,13 @@
 
 \vfill
 \begin{center}
-Last Revised: \today
+Última revisão: \today
 \end{center}
 
 \mainmatter
 
 
-\chapter{Abstracts}
+\chapter{Resumos}
 
 % Specify conf-abstract like this:
 % \begin{conf-abstract}[optional text going into the margin note]
@@ -191,29 +191,55 @@ Last Revised: \today
 \input{abstracts}
 
 
-\chapter{Organizing Committee}
+\chapter{Organização}
 
 \begin{center}
   \begin{tabular}{l}
-    Mathilde Brémond (Université Clermont Auvergne) \\
+    \textbf{Comissão organizadora} \\
+    Alexandre da Silva Costa (\textsclowercase{UFF}) \\
+    Bruno Loureiro Conte (\textsclowercase{PUC}-\textsclowercase{SP}) \\
+    Miriam Campolina Diniz Peixoto (\textsclowercase{UFMG}) \\
+    \\
+    \textbf{Comitê científico} \\
+    Bernardo Berruecos Frank (Universidad Nacional Autónoma de México) \\
+    Celso de Oliveira Vieira (Rühr-Universität Bochum, Alemanha / \textsclowercase{UFMG}) \\
+    Gustavo Laet Gomes (\textsclowercase{UFMG}) \\
     Liliana Carolina Sánchez Castro (Universidad Nacional de Colombia) \\
-    Bruno Loureiro Conte (Pontifícia Universidade Católica de São Paulo)
+    Luís Márcio Nogueira Fontes (\textsclowercase{IFAL}) \\
+    Marcos Roberto Damásio (\textsclowercase{UECE}) \\
+    Martim Reyes da Costa Silva (\textsclowercase{UFPR}) \\
+    Rogério Gimenes de Campos (\textsclowercase{UNILA}) \\
+    Silvio Marino (Università degli Studi di Napoli Federico \textsclowercase{II} / \textsclowercase{UnB}) \\
+    \\
+    \textbf{Comissão de apoio} \\
+    Bias Busquet Guimarães (\textsclowercase{UFF}) \\
+    Bruno Fernandes Santos (\textsclowercase{UFF}) \\
+    Henrique Buldrini Barreto (\textsclowercase{UFMG}) \\
+    Antônio Vinícius Ferreira da Fonseca (\textsclowercase{UFMG}) \\
+
   \end{tabular}
 \end{center}
 
 
-\chapter{Credits}
+\chapter{Apoio}
+\begin{center}
+  \begin{tabular}{c}
+    \includegraphics[width=0.15\textwidth]{../images/logo_capes.eps} \\
+  \end{tabular}
+\end{center}
+
+\chapter{Créditos}
 
 \begin{center}
   \begin{tabular}{l}
-    \textbf{Cover Image:} \\ \\
-    gallica.bnf.fr / Bibliothèque nationale de France. Département des manuscrits. Grec 1963
+    Imagem da capa: \\
+    Rogério Gimenes de Campos
   \end{tabular}
 \end{center}
 
 
 \backmatter
-\renewcommand{\indexname}{Author Index}
+\renewcommand{\indexname}{Índice de Autores}
 \printindex
 
 \end{document}

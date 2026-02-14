@@ -1,4 +1,4 @@
-\begin{$if(keynote)$keynote-conf-abstract$else$conf-abstract$endif$}[$if(session)$$date$\\$time$\\Session $session.id$$endif$]
+\begin{$if(keynote)$keynote-conf-abstract$else$conf-abstract$endif$}[$if(session)$$date$\\$time$\\Sessão $session.id$$endif$]
   {$title$}
   {$name_first$ $name_last$}
   {$institution$}

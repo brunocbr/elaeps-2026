@@ -194,7 +194,7 @@
        "authors" (process-files path process-author-list)
        "emails" (process-files path process-author-emails)))))
 
-;; (if-not (bound? #'*1))
+; (if-not (bound? #'*1))
 (-main *command-line-args*)
 
 (comment
@@ -208,6 +208,12 @@
 
   (let [data (get-data "data/sessions.yml")]
     (render-latex data (io/file "abstracts/ABraga.md")))
+
+  (let [data (get-data "data/sessions.yml")]
+    (render-latex data (io/file "abstracts/LBelittaniRibeiro.md")))
+
+  (let [data (get-data "data/sessions.yml")]
+    (read-body (io/file "abstracts/ABraga.md")))
 
   (read-yaml-header "abstracts/BLConte.md")
   (read-body "abstracts/BLConte.md"))
