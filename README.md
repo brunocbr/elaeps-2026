@@ -1,6 +1,6 @@
 # Parmenides SP '2025 Book of Abstracts Generator
 
-This repository contains the tools to generate the Book of Abstracts for the conference "The language of being, the language of nature: Parmenides and hist receptions", and manage Google Drive presentation folders.
+This repository contains the tools to generate the Book of Abstracts for the conference "II Encontro Latino-Americano de Estudos Pré-Socráticos", and manage Google Drive presentation folders.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ To generate the Book of Abstracts, you will need the following tools installed o
 ## Setup
 
 1. Clone this repository to your local machine.
-2. Create a `.env` file in the root of the repository, exporting `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, with your AWS credentials. Provide bucket and file name information with `AWS_S3_BUCKET_NAME` and `PDF_TARGET_NAME`.
+2. Create a `.env` file in the root of the repository with the information below.
 
 ### Google Drive Links
 
@@ -33,16 +33,8 @@ To generate the links to subfolders on a shared Drive folder, one per author nam
 ### Example `.env` file
 
 ```sh
-# AWS Configuration
-export AWS_DEFAULT_REGION=sa-east-1
-export AWS_ACCESS_KEY_ID=<your access key>
-export AWS_SECRET_ACCESS_KEY=<your secret>
-
-# S3 Bucket Name
-export AWS_S3_BUCKET_NAME=iaps-8
-
 # Target PDF File Name
-export PDF_TARGET_NAME=IAPS_8_Book_of_Abstracts.pdf
+export PDF_TARGET_NAME=Book_of_Abstracts.pdf
 
 # Google Drive Folder ID
 export GOOGLE_DRIVE_FOLDER_ID=<the folder id>
@@ -64,7 +56,7 @@ To upload the generated PDF to AWS S3, use the following command:
 make deploy_pdf
 ```
 
-This will upload the PDF to the specified AWS S3 bucket.
+This will upload the PDF to the specified Google Drive folder.
 
 To create a Word Document with the Program:
 

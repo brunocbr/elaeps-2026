@@ -34,11 +34,12 @@ clean:
 		$(OUTPUT_DIR)/*.aux $(OUTPUT_DIR)/*.log $(OUTPUT_DIR)/*.out \
 		$(OUTPUT_DIR)/program.docx
 
-deploy_pdf: $(OUTPUT_DIR)/book-of-abstracts.pdf
-	aws s3 cp $(OUTPUT_DIR)/book-of-abstracts.pdf s3://$(AWS_S3_BUCKET_NAME)/$(PDF_TARGET_NAME)
 
 google_authorization:
-	bb token-refresh.bb $(GOOGLE_CREDENTIALS)
+	bb google_auth.bb $(GOOGLE_CREDENTIALS)
+
+deploy_pdf: $(OUTPUT_DIR)/book-of-abstracts.pdf google_authorization
+	bb upload_drive.bb $(OUTPUT_DIR)/book-of-abstracts.pdf
 
 create_drive_subfolders: google_authorization
 	bb compile_abstracts.bb --path $(ABSTRACTS_DIR) --format authors | \
