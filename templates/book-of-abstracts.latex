@@ -83,14 +83,14 @@
   \bigskip
 }
 
-\newenvironment{keynote-conf-abstract}[7][]{
+\newenvironment{special-conf-abstract}[8][]{
   \needspace{10\baselineskip}
   \begin{center}
     { \renewcommand\textsuperscript[1]{}
       \phantomsection\addcontentsline{toc}{section}
-                                     {\texorpdfstring{\textsc{minicurso:} #2 (\emph{#3})}{#2 (#3)}}
+                                     {\texorpdfstring{\textsc{#8}: #2 (\emph{#3})}{#2 (#3)}}
     }
-    {\bfseries\scshape\so{minicurso}\par\medskip}
+    {\bfseries\scshape\so{#8}\par\medskip}
     {{\large\bfseries \href{#6}{#2}}\marginnote{#1\par%
         \vspace{0.5em}\printDocumentIcon{#7}{#6}}\par}
     \medskip

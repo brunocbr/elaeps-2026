@@ -1,12 +1,12 @@
 ---
-email: 
+email: lfbribeiro@id.uff.br
 institution: Universidade Federal Fluminense
 name_first: Luis Felipe
 name_last: Bellintani Ribeiro
-title: Filosofia e natureza em Antifonte e no Anônimo de Jâmblico
-keynote: true
+title: "Filosofia e natureza em Antifonte e no *Anônimo de Jâmblico*"
+special: minicurso
 ---
-Ementa: \textsclowercase{O} filósofo Antifonte e o filósofo autor do Anônimo de Jâmblico como representantes da filosofia sofística e a filosofia sofística como representante da filosofia pré-socrática.
+Ementa: O filósofo Antifonte e o filósofo autor do *Anônimo de Jâmblico* como representantes da filosofia sofística e a filosofia sofística como representante da filosofia pré-socrática.
 \
 
 Programa:

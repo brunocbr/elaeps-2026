@@ -1,10 +1,11 @@
-\begin{$if(keynote)$keynote-conf-abstract$else$conf-abstract$endif$}[$if(session)$$date$\\$time$\\Sessão $session.id$$endif$]
+\begin{$if(special)$special-conf-abstract$else$conf-abstract$endif$}[$if(session)$$date$\\$time$\\Sessão $session.id$$endif$]
   {$title$}
   {$name_first$ $name_last$}
   {$institution$}
   {$if(email)$$email$$endif$}
   {$if(url)$$url$$endif$}
   {$has_files$}
+  {$special$}
 \indexauthors{$if(index_name)$$index_name$@$endif$$name_last${,} $name_first$}
 $body$
 $if(biblio)$
@@ -14,5 +15,5 @@ $if(biblio)$
   $endfor$
 \end{abstractbibliography}
 $endif$
-\end{$if(keynote)$keynote-conf-abstract$else$conf-abstract$endif$}
+\end{$if(special)$special-conf-abstract$else$conf-abstract$endif$}
 
