@@ -129,9 +129,13 @@
         fullname (str (:name_first header) " " (:name_last header))
         drive-data (get drive fullname)
         output (tasks/shell {:out :string}
-                            (format "pandoc -t latex --template=templates/conf-abstract.latex -V date=\"%s\" -V time=\"%s\" -V url=\"%s\" -V has_files=\"%s\" \"%s\""
-                                    (:date session)
-                                    (:time session)
+                            (format "pandoc -t latex
+                            --template=templates/conf-abstract.latex -V
+                            session_name=\"%s\" -V date=\"%s\" -V time=\"%s\" -V
+                            url=\"%s\" -V has_files=\"%s\" \"%s\""
+                                    (or (:name session) "")
+                                    (or (:date session) "")
+                                    (or (:time session) "")
                                     (:link drive-data)
                                     (boolean (:contains-files? drive-data))
                                     (.getAbsolutePath file)))

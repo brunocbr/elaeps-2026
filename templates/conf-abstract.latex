@@ -1,4 +1,9 @@
-\begin{$if(special)$special-conf-abstract$else$conf-abstract$endif$}[$if(session)$$date$\\$time$\\Sessão $session.id$$endif$]
+\begin{$if(special)$special-conf-abstract$else$conf-abstract$endif$}[$if(session)$%
+  $if(date)$$date$\\$endif$%
+  $if(time)$$time$\\$endif$%
+  $if(session_name)$$session_name$$else$%
+  $if(session.id)$Sessão $session.id$$endif$$endif$%
+  $endif$]
   {$title$}
   {$name_first$ $name_last$}
   {$institution$}
