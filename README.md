@@ -1,4 +1,4 @@
-# Parmenides SP '2025 Book of Abstracts Generator
+# Book of Abstracts Generator
 
 This repository contains the tools to generate the Book of Abstracts for the conference "II Encontro Latino-Americano de Estudos Pré-Socráticos", and manage Google Drive presentation folders.
 
@@ -9,6 +9,7 @@ To generate the Book of Abstracts, you will need the following tools installed o
 - [Babashka](https://github.com/babashka/babashka): A fast, expressive, and feature-rich shell/scripting environment for Clojure.
 - [Pandoc](https://pandoc.org/): A universal document converter.
 - LaTeX with XeLaTeX: For typesetting the PDF document.
+- **Google Gemini API Key**: Required for AI-powered metadata extraction.
 
 ## Setup
 
@@ -38,9 +39,49 @@ export PDF_TARGET_NAME=Book_of_Abstracts.pdf
 
 # Google Drive Folder ID
 export GOOGLE_DRIVE_FOLDER_ID=<the folder id>
+
+# Gemini AI API Key (Get it at https://aistudio.google.com/)
+export GEMINI_API_KEY=your_key_here
 ```
 
-## Usage
+## Processing New Abstracts
+
+We use an AI-assisted workflow to convert incoming `.docx` abstracts into structured Markdown files.
+
+### The Pipeline
+
+1. **`prep_abstract.bb`**: Babashka script that uses Google Gemini to extract title, author, email, institution, and keywords.
+2. **`copy_abstract.sh`**: Utility shell script that:
+   - Converts Word to Markdown via Pandoc.
+   - Pipes content through `prep_abstract.bb`.
+   - Applies a `sed` filter for LaTeX `\textsclowercase{}`.
+   - Copies the result to the **clipboard**.
+3. **`process_abstracts.sh`**: A batch processing script that:
+   - Accepts one or multiple `.docx` files as arguments.
+   - Runs the full pipeline (Pandoc, Gemini extraction, and LaTeX formatting).
+   - Automatically saves the output into individual `.md` files with the same base name as the source.
+
+### Usage
+
+To process a new submission and get the formatted text ready to be pasted into the project:
+
+```sh
+./copy_abstract.sh path/to/author_submission.docx
+```
+
+The formatted content will be in your clipboard. You can then create a new .md file in the abstracts directory and paste the content.
+
+### Batch Processing
+
+To process multiple files at once and save them as `.md` files (instead of copying to clipboard):
+
+```sh
+./process_abstracts.sh abstracts/*.docx
+```
+
+This will create a corresponding `.md` file for each `.docx` file in the same directory.
+
+## Usage (General)
 
 To generate the Book of Abstracts in PDF format, use the following command:
 
