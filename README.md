@@ -28,6 +28,7 @@ To generate the links to subfolders on a shared Drive folder, one per author nam
    - Click on **Create Credentials** and select **OAuth client ID**.
    - Configure the OAuth consent screen if prompted.
    - Choose **Desktop app** as the application type and click **Create**.
+   - Ensure you enable both **Google Drive API** and **Gmail API**.
    - Download the `credentials.json` file and save it in the same directory as the script.
  3. Set `GOOGLE_DRIVE_FOLDER_ID` in your `.env` file to the corresponding folder id.
 
@@ -42,6 +43,9 @@ export GOOGLE_DRIVE_FOLDER_ID=<the folder id>
 
 # Gemini AI API Key (Get it at https://aistudio.google.com/)
 export GEMINI_API_KEY=your_key_here
+
+# Event Name for Email Communications
+export EVENT_NAME="II Encontro Latino-Americano de Estudos Pré-Socráticos"
 ```
 
 ## Processing New Abstracts
@@ -115,37 +119,46 @@ make google_authorization
 
 This will create or refresh the token stored in `token.json`.
 
-To create Google Drive subfolders using the author names:
+### Managing Author Folders and Notifications
+
+The workflow for managing author presentation folders follows these steps:
+
+1. **Authorize Google Access**:
+   Generate or refresh your local `token.json` (requires Drive and Gmail scopes).
+
+```sh
+make google_authorization
+```
+
+2. **Create Subfolders**:
+Create individual folders for each author on Google Drive.
 
 ```sh
 make create_drive_subfolders
 ```
 
-This will create the subfolders using the Google API.
 
-To generate the links database for the author subfolders:
+3. **Generate Sharing Links**:
+This command enables "Link Sharing" (anyone with the link can edit) for all author folders and saves the links to `data/sharing_links.edn`. This method works for any email address (including institutional ones like .edu).
 
 ```sh
-make generate_drive_links
+make generate_sharing_links
 ```
 
-This will create a database containing the links to the author subfolders, which will be used if available in the generation of the Book of Abstracts.
+4. **Notify authors**
 
-To update the PDF with Google Drive information:
+```sh
+make notify_authors
+```
+
+
+5. Update the PDF with Google Drive information and deploy the PDF as needed
 
 ```sh
 make update
 ```
 
 This will update the database, generate the PDF and deploy it.
-
-After the subfolders are created, you may send invitations to the authors:
-
-```sh
-make send_drive_invitations
-```
-
-This will send invitations to the author email addresses with their respectives links, granting write access to a subfolder.
 
 ## Contributing
 

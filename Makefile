@@ -55,9 +55,13 @@ generate_drive_links: google_authorization
 	bb generate_drive_links.bb $(GOOGLE_DRIVE_FOLDER_ID) $(GOOGLE_CREDENTIALS) \
 		>$(DATA_DIR)/google_drive.edn
 
-send_drive_invitations: google_authorization
+generate_sharing_links: google_authorization
+	@mkdir -p $(OUTPUT_DIR)
 	bb compile_abstracts.bb --path $(ABSTRACTS_DIR) --format emails | \
-	bb drive_invitations.bb $(GOOGLE_DRIVE_FOLDER_ID) $(GOOGLE_CREDENTIALS)
+	bb drive_create_sharing_links.bb $(GOOGLE_DRIVE_FOLDER_ID) $(GOOGLE_CREDENTIALS) $(DATA_DIR)/sharing_links.edn
+
+notify_authors: $(DATA_DIR)/sharing_links.edn
+	bb send_emails.bb $(DATA_DIR)/sharing_links.edn $(GOOGLE_CREDENTIALS) $(EVENT_NAME)
 
 clean_drive_links:
 	rm -f $(DATA_DIR)/google_drive.edn

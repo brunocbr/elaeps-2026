@@ -73,20 +73,51 @@
         {:status 200 :body "Authentication successful! You can close this tab and return to the terminal."})
     {:status 400 :body "Authorization code not found in request."}))
 
+;; (defn full-browser-auth []
+;;   (let [stop-server (server/run-server callback-handler {:port port})
+;;         auth-url (str "https://accounts.google.com/o/oauth2/v2/auth?"
+;;                       "scope=https://www.googleapis.com/auth/drive.file"
+;;                       "&response_type=code"
+;;                       "&access_type=offline"
+;;                       "&prompt=consent"
+;;                       "&redirect_uri=" redirect-uri
+;;                       "&client_id=" client-id)]
+
+;;     (println "\nTarget folder requires new authorization.")
+;;     (println "Opening browser...")
+
+;;     ;; Opens browser (macOS 'open'). Use 'xdg-open' on Linux if needed.
+;;     (sh "open" auth-url) 
+
+;;     (let [code @promise-code
+;;           resp (http/post "https://oauth2.googleapis.com/token"
+;;                           {:form-params {:code code
+;;                                          :client_id client-id
+;;                                          :client_secret client-secret
+;;                                          :redirect_uri redirect-uri
+;;                                          :grant_type "authorization_code"}})]
+;;       (save-token (:body resp))
+;;       (println "✅ New token.json generated."))
+
+;;     (stop-server)))
+
 (defn full-browser-auth []
   (let [stop-server (server/run-server callback-handler {:port port})
+        ;; Escopos separados por um espaço (codificado como %20)
+        scopes (str "https://www.googleapis.com/auth/drive.file"
+                    "%20"
+                    "https://www.googleapis.com/auth/gmail.send")
         auth-url (str "https://accounts.google.com/o/oauth2/v2/auth?"
-                      "scope=https://www.googleapis.com/auth/drive.file"
+                      "scope=" scopes
                       "&response_type=code"
                       "&access_type=offline"
                       "&prompt=consent"
                       "&redirect_uri=" redirect-uri
                       "&client_id=" client-id)]
 
-    (println "\nTarget folder requires new authorization.")
-    (println "Opening browser...")
+    (println "\nAutorização necessária para Google Drive e Gmail.")
+    (println "Abrindo o navegador...")
 
-    ;; Opens browser (macOS 'open'). Use 'xdg-open' on Linux if needed.
     (sh "open" auth-url) 
 
     (let [code @promise-code
@@ -97,7 +128,7 @@
                                          :redirect_uri redirect-uri
                                          :grant_type "authorization_code"}})]
       (save-token (:body resp))
-      (println "✅ New token.json generated."))
+      (println "✅ Novo token.json gerado com escopos de Drive e Gmail."))
 
     (stop-server)))
 
