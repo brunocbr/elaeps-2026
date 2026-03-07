@@ -6,6 +6,7 @@ email: marcos.damasio@uece.br
 institution: Universidade Estadual do Ceará
 name_first: Marcos Roberto
 name_last: Damásio da Silva
+index_name: Damasio da Silva
 title: "A natureza da amizade: φιλίη e φίλος nos fragmentos éticos de Demócrito"
 keywords: Demócrito, ética atomista, amizade, amigo
 ---

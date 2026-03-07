@@ -4,8 +4,8 @@ session:
   order: 1
 email: aloran@gmail.com
 institution: Universidade Federal do Paraná
-name_first: Martim
-name_last: Reyes C. Silva
+name_first: Martim Reyes C.
+name_last: Silva
 title: "Corpo e brinquedo: a plasticidade do discurso no *Elogio de Helena* de Górgias"
 ---
 

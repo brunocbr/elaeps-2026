@@ -4,8 +4,9 @@ session:
   order: 1
 email: rogedecampos@gmail.com
 institution: Universidade Federal da Integração Latino-Americana
-name_first: Rogério
-name_last: Gimenes de Campos
+name_first: Rogério Gimenez
+name_last: de Campos
+index_name: Campos
 title: Considerações oblíquas acerca de Enópides de Quios
 keywords: 
 ---

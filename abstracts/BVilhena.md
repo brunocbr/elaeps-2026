@@ -4,8 +4,8 @@ session:
   order: 2
 email: biancavilhena8@gmail.com
 institution: Universidade Federal Rural do Rio de Janeiro
-name_first: Bianca Vilhena
-name_last: Campinho Pereira
+name_first: Bianca Vilhena Campinho
+name_last: Pereira
 title: Heráclito e os sonhos
 keywords: 
 ---
