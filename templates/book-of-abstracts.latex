@@ -36,7 +36,7 @@
 \makeindex[intoc]
 
 \usepackage{polyglossia}
-\setmainlanguage[variant=brazil]{portuguese}
+\setmainlanguage[variant=brazilian]{portuguese}
 \setotherlanguages{english,spanish,greek}
 \setkeys{greek}{variant=ancient}
 \setotherlanguage[variant=ancient]{greek}
@@ -164,10 +164,6 @@
 
 \tableofcontents
 
-\vfill
-\begin{center}
-Última revisão: \today
-\end{center}
 
 \mainmatter
 
@@ -224,7 +220,10 @@
 \chapter{Apoio}
 \begin{center}
   \begin{tabular}{c}
-    \includegraphics[width=0.15\textwidth]{../images/logo_capes.eps} \\
+    \includegraphics[width=0.2\textwidth]{../images/logo_capes.eps} \\ \\ \\
+    \includegraphics[width=0.2\textwidth]{../images/logo_pucsp.png} \\ \\ \\
+    \includegraphics[width=0.2\textwidth]{../images/logo_uff.png} \\ \\ \\
+    \includegraphics[width=0.25\textwidth]{../images/logo_ufmg.png} \\
   \end{tabular}
 \end{center}
 
@@ -241,6 +240,12 @@
 \backmatter
 \renewcommand{\indexname}{Índice de Autores}
 \printindex
+
+\vfill
+\begin{center}
+  Atualizado em \today
+\end{center}
+
 
 \end{document}
 
