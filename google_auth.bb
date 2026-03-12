@@ -117,7 +117,7 @@
 
     (println "\nAutorização necessária para Google Drive e Gmail.")
     (println "Abrindo o navegador...")
-
+    (println auth-url)
     (sh "open" auth-url) 
 
     (let [code @promise-code
