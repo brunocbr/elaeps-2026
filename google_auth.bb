@@ -104,7 +104,7 @@
 (defn full-browser-auth []
   (let [stop-server (server/run-server callback-handler {:port port})
         ;; Escopos separados por um espaço (codificado como %20)
-        scopes (str "https://www.googleapis.com/auth/drive.file"
+        scopes (str "https://www.googleapis.com/auth/drive"
                     "%20"
                     "https://www.googleapis.com/auth/gmail.send")
         auth-url (str "https://accounts.google.com/o/oauth2/v2/auth?"
