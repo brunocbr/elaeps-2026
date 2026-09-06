@@ -95,7 +95,7 @@ make book
 
 This command will compile the abstracts and generate the PDF file.
 
-To upload the generated PDF to AWS S3, use the following command:
+To upload the generated PDF, use the following command:
 
 ```sh
 make deploy_pdf
